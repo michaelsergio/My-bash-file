@@ -38,6 +38,9 @@ export TERM="xterm-256color"
 # sets vim as editor for git (Highest Priority)
 export GIT_EDITOR="vim"
 
+# make sure to use vim for everything else
+export EDITOR="vim"
+
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin 
 
