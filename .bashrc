@@ -14,6 +14,9 @@ alias l='ls'
 alias ll='ls -alF'
 alias la='ls -A'
 
+# compensate for stupid fingers and microsoft natural keyboard
+alias bim='vim'
+
 # color and formatting for tree command
 alias tree="tree -CA"
 
