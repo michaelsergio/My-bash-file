@@ -1,0 +1,73 @@
+# vim: syntax=sh
+
+### Movement Aliases
+# ls aliases
+alias ll='ls -alhF'
+alias la='ls -A'
+alias l='ls -CA'
+# short cd 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+
+### Stats
+alias most-used='history | awk "{CMD[$2 $3 $4 $5]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}" | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n25'
+
+
+### Tools
+# alias ack-grep to short form
+if command_exists ack-grep ; then
+alias ack=ack-grep
+fi
+
+# alias for common make
+alias m="make"
+alias mi="make install"
+alias mc="make clean"
+
+
+### Colorful aliases
+alias tree="tree -CA"
+alias grep="grep --color"
+if [[ "$(uname)" = "Darwin" ]] ; then
+  alias ls='ls -G'
+elif [[ "$(uname)" = "Linux" ]] ; then 
+  alias ls='ls --color=auto'
+fi
+
+# Use colorful tail if grc exists
+if command_exists grc ; then
+  alias tail="grc tail"
+fi
+
+
+### Vim Stuff
+# Unix tips I always have to google
+alias tips="vim -R tips.markdown"
+
+
+# Stupid Fingers never hit vim in a hurry
+mistakes="bim cim fim dim gim nim him"
+for i in $mistakes; do
+  alias $i='vim'
+done
+
+
+### Custom OS Aliases
+if [[ "$(uname)" = "Darwin" ]] ; then
+  # Add MAMPs PHP
+  PATH=/Applications/MAMP/bin/php/php5.4.4/bin:$PATH
+elif [[ "$(uname)" = "Linux" ]] ; then 
+
+  # if Arch Linux
+  if [[ "(uname -v)" =~ .*[A|a]rch.* ]] ; then
+  # pacman aliases
+    alias pac="pacman -S" 
+    alias pacr="pacman -Rns"
+    alias pacu="pacman -Syu"
+  fi
+fi
+
