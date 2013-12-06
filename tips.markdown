@@ -4,6 +4,11 @@ Tips
 [osxscreenshot]
 
 
+Misc [misc]
+===========
+Unified Diff
+diff -u f1 f2 
+
 tmux [tmux]
 ============
 C-b     Default Command Key
