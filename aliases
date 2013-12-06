@@ -23,6 +23,11 @@ if command_exists ack-grep ; then
 alias ack=ack-grep
 fi
 
+# Stop me from destroying anything acciedently
+alias cp='cp -ip'   # ask before overwrite, prerserve flags
+alias mv='mv -i'    # ask before overwriting
+alias scp='scp -p'  # preserve flags
+
 # alias for common make
 alias m="make"
 alias mi="make install"
