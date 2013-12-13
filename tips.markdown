@@ -2,12 +2,35 @@ Tips
 =========
 [tmux]
 [osxscreenshot]
+[misc]
+[bashtips]
 
 
 Misc [misc]
 ===========
+
+
+symlink
+------------
+ln -s REAL-target-to-link-to NAME-of-new-link
+
 Unified Diff
+-------------
 diff -u f1 f2 
+
+Dynamic Port Forward
+----------------------
+ssh -D <localportnumber> user@remotehost
+
+Temporary Devicec Files
+---------------------------
+Rather than:
+  find /etc | sort > local-etc
+  find /mnt/remote/etc|sort > remote-etc
+  diff local-etc remote-etc
+  rm local-etc remote-etc
+You can create a temp dev file:
+  diff <(find /etc | sort) <(find /mnt/remote/etc|sort)
 
 tmux [tmux]
 ============
@@ -47,4 +70,44 @@ OSX Screenshot [osxscreenshot]
 ⌘ ⇧ 4             Rectangle to Desktop
 ⌘ ⇧ 4  + space    Window to Desktop
 Add Control (^) to go to clipboard instead of Desktop
+ 
+
+Bash Scripting Tips [bashtips]
+=================================
+Math
+------
+echo $((3 * 37 + 12)) # Outputs 123
+echo $((0xdeadbeef)) # Outputs 3735928559
+
+XArgs: Better for loop
+------------------------
+find . -iname ' * .php' -print0 | xargs -0 svn add
+
+For loop
+-----------
+for file in ./ * .php; 
+ do echo -n “$file”:\ ;
+ grep ‘while’ “$file” | wc -l;
+done
+
+
+Conditionals
+------------
+The man page for shell does a better job explaining this.
+To see conditionals, search for /\[ expression \]
+To see control: /Flow-Control
+For reference:
+if [ -f /var/log/messages ]
+then stuff
+fi
+
+fi
+
+
+
+
+
+
+
+
 
