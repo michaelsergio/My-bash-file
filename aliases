@@ -23,6 +23,20 @@ if command_exists ack-grep ; then
 alias ack=ack-grep
 fi
 
+# With grep, ignore unicode to be faster
+alias cgrep="LANG=C grep"
+
+# Find date since unix epoch
+# use: unixtime 1383814861
+# returns: Mon Dec 16 13:16:05 EST 2013
+function __t2d {                                                                
+  if [ "$1x" != 'x' ]; then                                              
+    date -d "@$1"                                                       
+      fi                                                                     
+} 
+alias unixtime='__t2d'                                                               
+
+
 # Stop me from destroying anything acciedently
 alias cp='cp -ip'   # ask before overwrite, prerserve flags
 alias mv='mv -i'    # ask before overwriting
