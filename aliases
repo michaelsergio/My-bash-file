@@ -68,7 +68,7 @@ fi
 
 ### Vim Stuff
 # Unix tips I always have to google
-alias tips="vim -R tips.markdown"
+alias tips="vim -R ~/bashrc/tips.markdown"
 
 
 # Stupid Fingers never hit vim in a hurry
