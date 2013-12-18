@@ -4,7 +4,11 @@ Tips
 [osxscreenshot]
 [misc]
 [bashtips]
+[urls]
 
+URLs [urls]
+============
+[Git Ignores](https://github.com/github/gitignore)
 
 Misc [misc]
 ===========
