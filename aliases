@@ -36,6 +36,9 @@ function __t2d {
 } 
 alias unixtime='__t2d'
 
+# show permissions in octal for directory
+alias octal="stat -c '%a %n' *"
+
 # Stop me from destroying anything acciedently
 alias cp='cp -ip'   # ask before overwrite, prerserve flags
 alias mv='mv -i'    # ask before overwriting
