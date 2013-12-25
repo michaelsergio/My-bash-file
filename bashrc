@@ -35,9 +35,6 @@ export GIT_EDITOR="vim"
 # make sure to use vim for everything else
 export EDITOR="vim"
 
-# Disable caps lock ubuntu
-setxkbmap -option caps:none
-
 # Have ssh autocomplete host name from ssh conf file
 # Uses word list from conf file where Host is stripped out
 complete -W "$(echo `cat ~/.ssh/config | grep Host | sed 's/Host[a-z]* *//'`;)" ssh
@@ -50,4 +47,8 @@ source ~/bashrc/aliases
 # Add git completion to OSX
 if [[ "$(uname)" = "Darwin" ]] ; then
   source ~/.git-completion.bash
+elif [[ "$(uname)" = "Linux" ]] ; then 
+  # Disable caps lock ubuntu
+  setxkbmap -option caps:none
 fi
+
