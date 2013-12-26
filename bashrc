@@ -48,7 +48,9 @@ source ~/bashrc/aliases
 if [[ "$(uname)" = "Darwin" ]] ; then
   source ~/.git-completion.bash
 elif [[ "$(uname)" = "Linux" ]] ; then 
-  # Disable caps lock ubuntu
-  setxkbmap -option caps:none
+  # Set the Caps lock key to work as an escape key.
+  ## Really removes anything bound to the caps lock key
+  ## and maps the keycode for caps lock [see xkeycaps] to escape
+  xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 fi
 
