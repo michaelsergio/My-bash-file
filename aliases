@@ -74,7 +74,7 @@ alias tips="vim -R ~/bashrc/tips.markdown"
 
 
 # Stupid Fingers never hit vim in a hurry
-mistakes="bim cim fim dim gim nim him"
+mistakes="bim cim fim dim gim nim him ivm"
 for i in $mistakes; do
   alias $i='vim'
 done
