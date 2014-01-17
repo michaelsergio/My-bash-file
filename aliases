@@ -38,7 +38,7 @@ alias unixtime='__t2d'
 
 # backup file alias
 function __backup {
-  cp $@ "$@.bk"
+  cp -R $@ "$@.bk"
 }
 alias bk='__backup'
 alias backup='__backup'
