@@ -107,11 +107,8 @@ fi
 
 fi
 
-
-
-
-
-
-
+Shell Cheat sheet
+------------------
+http://www.cheat-sheets.org/saved-copy/shellscripcheatsheet.pdf
 
 

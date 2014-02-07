@@ -84,6 +84,7 @@ done
 if [[ "$(uname)" = "Darwin" ]] ; then
   # Add MAMPs PHP
   PATH=/Applications/MAMP/bin/php/php5.4.4/bin:$PATH
+  alias updatedb="/usr/libexec/locate.updatedb"
 elif [[ "$(uname)" = "Linux" ]] ; then 
   # Make open work the same as on OsX
   alias open="xdg-open"
