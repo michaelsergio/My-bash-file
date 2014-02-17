@@ -14,6 +14,18 @@ Misc [misc]
 ===========
 
 
+tar
+-------
+compress:
+tar -czvf name.tgz subdir 
+extract:
+tar -xzvf tar.file
+
+formats:
+z for tgz 
+j for bz2
+
+
 symlink
 ------------
 ln -s REAL-target-to-link-to NAME-of-new-link

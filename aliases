@@ -36,6 +36,13 @@ function __t2d {
 } 
 alias unixtime='__t2d'
 
+# backup file alias
+function __backup {
+  cp -R $@ "$@.bk"
+}
+alias bk='__backup'
+alias backup='__backup'
+
 # show permissions in octal for directory
 alias octal="stat -c '%a %n' *"
 
