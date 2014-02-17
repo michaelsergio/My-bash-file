@@ -97,4 +97,3 @@ elif [[ "$(uname)" = "Linux" ]] ; then
     alias pacu="pacman -Syu"
   fi
 fi
-

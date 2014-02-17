@@ -35,6 +35,7 @@ export GIT_EDITOR="vim"
 # make sure to use vim for everything else
 export EDITOR="vim"
 
+
 # Have ssh autocomplete host name from ssh conf file
 # Uses word list from conf file where Host is stripped out
 complete -W "$(echo `cat ~/.ssh/config | grep Host | sed 's/Host[a-z]* *//'`;)" ssh
@@ -47,6 +48,7 @@ source ~/bashrc/aliases
 # Add git completion to OSX
 if [[ "$(uname)" = "Darwin" ]] ; then
   source ~/.git-completion.bash
+  export GOPATH="/Users/msergio/code/go"
 elif [[ "$(uname)" = "Linux" ]] ; then 
   # Set the Caps lock key to work as an escape key.
   ## Really removes anything bound to the caps lock key
