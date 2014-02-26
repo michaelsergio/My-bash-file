@@ -97,6 +97,7 @@ if [[ "$(uname)" = "Darwin" ]] ; then
   # Add MAMPs PHP
   PATH=/Applications/MAMP/bin/php/php5.4.4/bin:$PATH
   alias updatedb="/usr/libexec/locate.updatedb"
+  alias ppp="time cordova -d prepare"
 elif [[ "$(uname)" = "Linux" ]] ; then 
   # Make open work the same as on OsX
   alias open="xdg-open"

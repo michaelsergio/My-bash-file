@@ -29,6 +29,9 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+# A nicer git log
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
+
 
 # sets vim as editor for git (Highest Priority)
 export GIT_EDITOR="vim"
@@ -36,18 +39,16 @@ export GIT_EDITOR="vim"
 export EDITOR="vim"
 
 
-# Have ssh autocomplete host name from ssh conf file
-# Uses word list from conf file where Host is stripped out
-complete -W "$(echo `cat ~/.ssh/config | grep Host | sed 's/Host[a-z]* *//'`;)" ssh
-
 # Other sources
 source ~/bashrc/paths
 source ~/bashrc/aliases
 
+# Extra Completions
+source ~/bashrc/completions
 
-# Add git completion to OSX
+
+# OS Specific Stuff
 if [[ "$(uname)" = "Darwin" ]] ; then
-  source ~/.git-completion.bash
   export GOPATH="/Users/msergio/code/go"
 elif [[ "$(uname)" = "Linux" ]] ; then 
   # Set the Caps lock key to work as an escape key.
