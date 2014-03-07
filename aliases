@@ -80,6 +80,10 @@ if command_exists grc ; then
 fi
 
 
+function cs() { 
+  cd "$@" && ls; 
+}
+
 ### Vim Stuff
 # Unix tips I always have to google
 alias tips="vim -R ~/bashrc/tips.markdown"
