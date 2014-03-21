@@ -87,6 +87,11 @@ for i in $mistakes; do
   alias $i='vim'
 done
 
+# Always re-alias vi just incase of weird symlinks
+# Homebrew, I'm looking at you!
+alias vi='vim'
+
+
 
 ### Custom OS Aliases
 if [[ "$(uname)" = "Darwin" ]] ; then
