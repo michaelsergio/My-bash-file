@@ -83,14 +83,19 @@ alias tips="vim -R ~/bashrc/tips.markdown"
 
 # Stupid Fingers never hit vim in a hurry
 mistakes="bim cim fim dim gim nim him ivm"
+morevim="bi   ci      di  gi  ni  hi  iv "
+# Notice fi is missing since bash if needs fi
+ 
 for i in $mistakes; do
+  alias $i='vim'
+done
+for i in $morevim; do
   alias $i='vim'
 done
 
 # Always re-alias vi just incase of weird symlinks
 # Homebrew, I'm looking at you!
 alias vi='vim'
-
 
 
 ### Custom OS Aliases

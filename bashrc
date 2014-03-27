@@ -20,15 +20,6 @@ PS1='\w\$ '
 # allows vim to have colorful schemes
 export TERM="xterm-256color"
 
-# colorful less
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-
 # A nicer git log
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
 
@@ -54,6 +45,8 @@ elif [[ "$(uname)" = "Linux" ]] ; then
   # Set the Caps lock key to work as an escape key.
   ## Really removes anything bound to the caps lock key
   ## and maps the keycode for caps lock [see xkeycaps] to escape
-  xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+  if [[ $DISPLAY ]] ; then
+    xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+  fi
 fi
 
