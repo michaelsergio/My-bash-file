@@ -1,6 +1,8 @@
 # Have ssh autocomplete host name from ssh conf file
 # Uses word list from conf file where Host is stripped out
-complete -W "$(echo `cat ~/.ssh/config | grep Host | sed 's/Host[a-z]* *//'`;)" ssh
+if [ -f ~/.ssh/config ] ; then
+  complete -W "$(echo `cat ~/.ssh/config | grep Host | sed 's/Host[a-z]* *//'`;)" ssh
+fi
 
 # Add git completion to OSX
 if [[ "$(uname)" = "Darwin" ]] ; then
