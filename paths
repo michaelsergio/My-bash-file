@@ -1,15 +1,32 @@
 # vim: syntax=sh
 
+## RVM 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin 
-
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# python
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-export PATH="$HOME/code/google/go_appengine:$PATH"
 
-# Paths for brew
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
+if [[ "$(uname)" = "Darwin" ]] ; then
+  # OS X stuff goes here
+  # Android Home
+  export ANDROID_HOME=/usr/local/opt/android-sdk
+
+  # python
+  export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+
+  # Paths for brew
+  export PATH=/usr/local/bin:$PATH
+  export PATH=/EXACTusr/local/sbin:$PATH
+
+  # brew use apache bin specifically for titan-internal
+  export PATH=/usr/local/Cellar/apache24/2.4.7/bin:$PATH
+
+elif [[ "$(uname)" = "Linux" ]] ; then 
+  :
+fi
+
+
+# Go Path
+export GOPATH="$HOME/code/go"
+export PATH="$HOME/code/google/go_appengine:$PATH"

@@ -48,8 +48,10 @@ source ~/bashrc/completions
 
 
 # OS Specific Stuff
+# keep aliases and paths in separate file
 if [[ "$(uname)" = "Darwin" ]] ; then
-  export GOPATH="/Users/msergio/code/go"
+  # OS X stuff goes here
+  :
 elif [[ "$(uname)" = "Linux" ]] ; then 
   # Set the Caps lock key to work as an escape key.
   ## Really removes anything bound to the caps lock key

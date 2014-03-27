@@ -4,7 +4,12 @@ complete -W "$(echo `cat ~/.ssh/config | grep Host | sed 's/Host[a-z]* *//'`;)" 
 
 # Add git completion to OSX
 if [[ "$(uname)" = "Darwin" ]] ; then
-  source ~/.git-completion.bash
-#elif [[ "$(uname)" = "Linux" ]] ; then 
+  # source aliases from Homebrew
+  source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
+  for f in /usr/local/etc/bash_completion.d/*; do
+    source $f;
+  done
+elif [[ "$(uname)" = "Linux" ]] ; then 
+  : 
 fi
 
