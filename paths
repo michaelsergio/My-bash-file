@@ -22,6 +22,9 @@ if [[ "$(uname)" = "Darwin" ]] ; then
   # brew use apache bin specifically for titan-internal
   export PATH=/usr/local/Cellar/apache24/2.4.7/bin:$PATH
 
+  # Export LanguageTool for use with my vim
+  export GRAMMAR_TOOL="/usr/local/Cellar/languagetool/2.4.1/libexec/languagetool-commandline.jar"
+
 elif [[ "$(uname)" = "Linux" ]] ; then 
   :
 fi
