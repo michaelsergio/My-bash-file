@@ -1,17 +1,19 @@
-# Have ssh autocomplete host name from ssh conf file
-# Uses word list from conf file where Host is stripped out
-if [ -f ~/.ssh/config ] ; then
-  complete -W "$(echo `cat ~/.ssh/config | grep Host | sed 's/Host[a-z]* *//'`;)" ssh
-fi
 
 # Add git completion to OSX
 if [[ "$(uname)" = "Darwin" ]] ; then
   # source aliases from Homebrew
-  source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
+source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
   for f in /usr/local/etc/bash_completion.d/*; do
     source $f;
   done
 elif [[ "$(uname)" = "Linux" ]] ; then 
   : 
+fi
+
+# Have ssh autocomplete host name from ssh conf file
+# Uses word list from conf file where Host is stripped out
+if [ -f ~/.ssh/config ] ; then
+  complete -W \
+     "$(echo `cat ~/.ssh/config | grep Host | sed 's/Host[a-z]* *//'`;)" ssh
 fi
 
