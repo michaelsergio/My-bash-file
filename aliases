@@ -43,8 +43,8 @@ alias unbackup='__unbackup'
 # show permissions in octal for directory
 alias octal="stat -c '%a %n' *"
 
-# Stop me from destroying anything acciedently
-alias cp='cp -ip'   # ask before overwrite, prerserve flags
+# Stop me from destroying anything accidentally
+alias cp='cp -ip'   # ask before overwrite, preserve flags
 alias mv='mv -i'    # ask before overwriting
 alias scp='scp -p'  # preserve flags
 
@@ -95,6 +95,7 @@ done
 
 # Always re-alias vi just incase of weird symlinks
 # Homebrew, I'm looking at you!
+# Also, RHEL uses two separate binaries.
 alias vi='vim'
 
 
