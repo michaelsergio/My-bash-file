@@ -24,12 +24,24 @@ OSX
     brew tap phinze/cask
     brew install brew-cask
     brew cask install google-chrome
+    brew install \
+      the_silver_searcher \
+      vim \
+      git \
+      exuberant-ctags \
+      cloc \
+      ncdu 
+      
+
+Use brew to install the common packages listed below.
 
 Ubuntu
 ===================
 
     sudo apt-get install \
-      silversearcher-ag
-      vim
-      git
-      exuberant-ctags
+      silversearcher-ag \
+      vim \
+      git \
+      exuberant-ctags \
+      ncdu
+
