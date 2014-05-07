@@ -105,6 +105,8 @@ if [[ "$(uname)" = "Darwin" ]] ; then
   PATH=/Applications/MAMP/bin/php/php5.4.4/bin:$PATH
   alias updatedb="/usr/libexec/locate.updatedb"
   alias ppp="time cordova -d prepare"
+  # Give privilege to run DTrace, then drop it to user.
+  #alias dtruss="sudo dtruss sudo -u msergio"
 elif [[ "$(uname)" = "Linux" ]] ; then 
   # Make open work the same as on OsX
   alias open="xdg-open"
